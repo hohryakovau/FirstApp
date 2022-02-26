@@ -4,18 +4,17 @@ import "fmt"
 
 func Solution(A []int, k int) []int {
 
-	var test []int = A
+	var res []int = A
 	for i := 0; i < k; i++ {
-		test = Rot(test)
-		fmt.Println("Итерация ", i+1, " - ", test)
+		res = Rot(res)
+		fmt.Println("Итерация ", i+1, " - ", res)
 	}
-	return test
+	return res
 
 }
 
 func Rot(arr []int) []int {
 	l := len(arr)
-	fmt.Println("Длинна массива", l)
 	var b []int = make([]int, l)
 	for i := 0; i < l; i++ {
 		if i == (l - 1) {
@@ -32,7 +31,7 @@ func main() {
 	ArrRot := []int{3, 8, 9, 7, 6}
 
 	var N int
-	N = 3
+	N = 4
 	ArrRot = Solution(ArrRot, N)
 	fmt.Println("Результат", ArrRot)
 }
